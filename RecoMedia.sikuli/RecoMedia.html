@@ -1,0 +1,240 @@
+
+<html>
+   <head>
+      <style type="text/css">
+         .sikuli-code {
+            font-size: 20px;
+            font-family: "Osaka-mono", Monospace;
+            line-height: 1.5em;
+            display:table-cell;
+            white-space: pre-wrap;       /* css-3 */
+            white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+            white-space: -pre-wrap;      /* Opera 4-6 */
+            white-space: -o-pre-wrap;    /* Opera 7 */
+            word-wrap: break-word;       /* Internet Explorer 5.5+ */
+            width: 99%;   /* remove horizontal scroll-bar when viewing in IE7 */
+         }
+         .sikuli-code img {
+            vertical-align: middle;
+            margin: 2px;
+            border: 1px solid #ccc;
+            padding: 2px;
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-box-shadow: 1px 1px 1px gray;
+            -webkit-box-shadow: 1px 1px 2px gray;
+         }
+         .kw {
+            color: blue;
+         }
+         .skw {
+            color: rgb(63, 127, 127);
+         }
+
+         .str {
+            color: rgb(128, 0, 0);
+         }
+
+         .dig {
+            color: rgb(128, 64, 0);
+         }
+
+         .cmt {
+            color: rgb(200, 0, 200);
+         }
+
+         h2 {
+            display: inline;
+            font-weight: normal;
+         }
+
+         .info {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            display: none;
+         }
+
+         a {
+            color: #9D2900;
+         }
+
+         body {
+            font-family: "Trebuchet MS", Arial, Sans-Serif;
+         }
+
+      </style>
+   </head>
+<body>
+<div class="info">
+<h2>RecoMedia.sikuli</h2> <a href="RecoMedia.zip">(Download this script)</a>
+</div>
+<pre class="sikuli-code">
+<span class="kw">import</span> time
+
+<span class="kw">def</span> init():
+    hover(Pattern(<img src="1480910507966.png" />).targetOffset(-<span class="dig">7</span>,<span class="dig">43</span>))
+    <span class="skw">rightClick</span>(<img src="1480910578984.png" />)
+    <span class="skw">click</span>(Pattern(<img src="1480910578984.png" />).targetOffset(<span class="dig">0</span>,-<span class="dig">170</span>))
+    time.<span class="skw">sleep</span>(<span class="dig">2</span>)
+    <span class="skw">click</span>(<img src="1480910634159.png" />)
+    <span class="skw">type</span>(<span class="str">"192.168.10.1"</span>)
+    <span class="skw">type</span>(Key.ENTER)
+
+<span class="kw">def</span> systemPassword(id, password, newpass, bypass=False):
+    time.<span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(<img src="1480911597347.png" />)
+    <span class="cmt">#if exists(Pattern("1480911674806.png").targetOffset(-268,-4)) != None:</span>
+    <span class="cmt">#    click("1480911706764.png")</span>
+
+    time.<span class="skw">sleep</span>(<span class="dig">3</span>)
+    <span class="skw">wait</span>(<img src="1480918677729.png" />, <span class="dig">2</span>)
+    <span class="skw">type</span>(id)
+    <span class="skw">type</span>(Key.TAB)
+    <span class="skw">type</span>(password)
+    <span class="skw">click</span>(Pattern(<img src="1480911937699.png" />).targetOffset(<span class="dig">1</span>,<span class="dig">105</span>))
+    time.<span class="skw">sleep</span>(<span class="dig">1</span>)
+    wheel(Pattern(<img src="1480913138269.png" />).targetOffset(<span class="dig">59</span>,<span class="dig">166</span>),WHEEL_DOWN, <span class="dig">2</span>)
+    time.<span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(Pattern(<img src="1480913344852.png" />).targetOffset(-<span class="dig">202</span>,-<span class="dig">22</span>))
+    <span class="skw">type</span>(newpass)
+    <span class="skw">type</span>(Key.TAB)
+    <span class="skw">type</span>(newpass)
+    <span class="skw">click</span>(Pattern(<img src="1480913452805.png" />).targetOffset(-<span class="dig">291</span>,<span class="dig">7</span>))
+    <span class="skw">wait</span>(<img src="1480913475219.png" />, <span class="dig">2</span>)
+    <span class="skw">click</span>(Pattern(<img src="1480913475219.png" />).targetOffset(<span class="dig">171</span>,<span class="dig">49</span>))
+    time.<span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(Pattern(<img src="1480913565600.png" />).targetOffset(<span class="dig">146</span>,<span class="dig">3</span>))
+    <span class="skw">click</span>(Pattern(<img src="1480913581177.png" />).targetOffset(<span class="dig">166</span>,<span class="dig">47</span>))
+    <span class="skw">click</span>(Pattern(<img src="1480913639789.png" />).targetOffset(-<span class="dig">3</span>,-<span class="dig">13</span>))
+    <span class="skw">wait</span>(<img src="1480918359212.png" />,<span class="dig">5</span>)
+    <span class="skw">click</span>(<img src="1480913668457.png" />)
+    time.<span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(Pattern(<img src="1480913692013.png" />).targetOffset(-<span class="dig">50</span>,-<span class="dig">54</span>))
+    <span class="skw">type</span>(id)
+    <span class="skw">type</span>(Key.TAB)
+    <span class="kw">if</span> bypass == True:
+        <span class="skw">type</span>(password)
+    <span class="kw">else</span>: <span class="skw">type</span>(newpass)
+    <span class="skw">click</span>(Pattern(<img src="1480913753387.png" />).targetOffset(-<span class="dig">15</span>,<span class="dig">96</span>))
+    <span class="kw">if</span> exists(<img src="1480913795685.png" />) != None:
+        <span class="kw">print</span>(<span class="str">"MODERATOR PASSWORD ERROR!!"</span>)
+        <span class="skw">click</span>(Pattern(<img src="1480913838347.png" />).targetOffset(<span class="dig">301</span>,<span class="dig">50</span>))
+        <span class="kw">return</span> False
+    <span class="kw">elif</span> exists(<img src="1480918152411.png" />) != None:
+        <span class="kw">print</span>(<span class="str">"MODERATOR PASSWORD OK!!"</span>)
+        <span class="skw">click</span>(Pattern(<img src="1480918201160.png" />).targetOffset(<span class="dig">5</span>,<span class="dig">113</span>))
+        <span class="skw">click</span>(Pattern(<img src="1480918230067.png" />).targetOffset(<span class="dig">174</span>,<span class="dig">50</span>))
+    <span class="skw">click</span>(Pattern(<img src="1480918752560.png" />).targetOffset(-<span class="dig">4</span>,-<span class="dig">142</span>))
+    <span class="skw">wait</span>(<img src="1480918774448.png" />, <span class="dig">3</span>)
+    <span class="kw">print</span>(<span class="str">"SYSTEM PASSWORD LOOP DONE!!"</span>)
+
+<span class="kw">def</span> installerCheck():
+    time.<span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(<img src="1480919286229.png" />)
+    time.<span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="cmt">#try:</span>
+    <span class="cmt">#    wait("1480919309788.png", 3)</span>
+    <span class="cmt">#except:</span>
+    <span class="cmt">#    print("DOWNLOAD NOT STARTED/ TOO DAMN FAST")</span>
+    <span class="cmt">#    return False</span>
+    <span class="kw">print</span>(<span class="str">"STARTED DOWNLOADING!!"</span>)
+    <span class="skw">wait</span>(<img src="1480919405637.png" />, <span class="dig">10</span>)
+    <span class="kw">print</span>(<span class="str">"FINISHED DOWNLOADING!!"</span>)
+    <span class="skw">click</span>(Pattern(<img src="1480919524506.png" />).targetOffset(<span class="dig">44</span>,-<span class="dig">1</span>))
+    <span class="kw">print</span>(<span class="str">"DOWNLOAD CHECK COMPLETED"</span>)
+    <span class="kw">return</span> True
+
+<span class="kw">def</span> fileCheck(id, password, filename):
+    time.<span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(<img src="1480923709757.png" />)
+    <span class="skw">wait</span>(<img src="1480923765056.png" />, <span class="dig">5</span>)
+    <span class="skw">type</span>(id)
+    <span class="skw">type</span>(Key.TAB)
+    <span class="skw">type</span>(password)
+    <span class="skw">type</span>(Key.ENTER)
+    <span class="skw">wait</span>(Pattern(<img src="1480923789865.png" />).targetOffset(-<span class="dig">125</span>,<span class="dig">6</span>), <span class="dig">5</span>)
+    <span class="skw">click</span>(Pattern(<img src="1480923789865.png" />).targetOffset(-<span class="dig">125</span>,<span class="dig">6</span>))
+    <span class="skw">wait</span>(<img src="1480923816523.png" />, <span class="dig">5</span>)
+    <span class="skw">click</span>(<img src="1480923816523.png" />)
+    <span class="skw">click</span>(<img src="1480923864258.png" />)
+    <span class="skw">click</span>(<img src="1480923882219.png" />)
+    <span class="skw">type</span>(filename + <span class="str">".txt"</span>)
+    <span class="skw">type</span>(Key.ENTER)
+    <span class="skw">click</span>(Pattern(<img src="1480923789865.png" />).targetOffset(<span class="dig">140</span>,<span class="dig">6</span>))
+    <span class="skw">click</span>(Pattern(<img src="1480918230067.png" />).targetOffset(<span class="dig">174</span>,<span class="dig">50</span>))
+    <span class="skw">wait</span>(Pattern(<img src="1480918752560.png" />).targetOffset(-<span class="dig">4</span>,-<span class="dig">142</span>), <span class="dig">5</span>)
+    <span class="skw">click</span>(Pattern(<img src="1480918752560.png" />).targetOffset(-<span class="dig">4</span>,-<span class="dig">142</span>))
+    <span class="skw">wait</span>(<img src="1480918774448.png" />, <span class="dig">3</span>)
+    <span class="skw">click</span>(<img src="1480924343443.png" />)
+    <span class="skw">click</span>(Pattern(<img src="1480924378510.png" />).targetOffset(-<span class="dig">331</span>,<span class="dig">6</span>))
+    <span class="skw">type</span>(filename + <span class="str">".txt"</span>)
+    <span class="kw">if</span> exists(<img src="1480924620914.png" />) != None:
+        <span class="skw">click</span>(Pattern(<img src="1480924620914.png" />).targetOffset(<span class="dig">50</span>,<span class="dig">10</span>))
+    <span class="kw">else</span>:
+        <span class="kw">print</span>(<span class="str">"FILE NOT FOUND"</span>)
+        <span class="kw">return</span> False
+    <span class="skw">click</span>(Pattern(<img src="1480924546842.png" />).targetOffset(<span class="dig">366</span>,<span class="dig">81</span>))
+    <span class="kw">try</span>:
+        <span class="skw">wait</span>(<img src="1480924728708.png" />, <span class="dig">10</span>)
+    <span class="kw">except</span>:
+        <span class="kw">print</span>(<span class="str">"DOWNLOAD NOT STARTED/ TOO DAMN FAST"</span>)
+        <span class="kw">return</span> False
+    <span class="kw">print</span>(<span class="str">"FINISHED DOWNLOADING!!"</span>)
+    <span class="skw">click</span>(Pattern(<img src="1480919524506.png" />).targetOffset(<span class="dig">44</span>,-<span class="dig">1</span>))
+    <span class="kw">print</span>(<span class="str">"DOWNLOAD CHECK COMPLETED"</span>)
+    <span class="skw">click</span>(<img src="1480924841495.png" />)
+    <span class="skw">wait</span>(<img src="1480918774448.png" />, <span class="dig">3</span>)
+    adminLogin(id, password)
+    <span class="skw">wait</span>(Pattern(<img src="1480923789865.png" />).targetOffset(-<span class="dig">125</span>,<span class="dig">6</span>), <span class="dig">5</span>)
+    <span class="skw">click</span>(Pattern(<img src="1480923789865.png" />).targetOffset(-<span class="dig">125</span>,<span class="dig">6</span>))
+    <span class="skw">click</span>(<img src="1480925684844.png" />)
+    <span class="skw">click</span>(Pattern(<img src="1480925684844.png" />).targetOffset(<span class="dig">228</span>,<span class="dig">62</span>))
+    <span class="skw">click</span>(Pattern(<img src="1480925721544.png" />).targetOffset(<span class="dig">393</span>,<span class="dig">129</span>))
+    time.<span class="skw">sleep</span>(<span class="dig">1</span>)
+    <span class="skw">click</span>(Pattern(<img src="1480913565600.png" />).targetOffset(<span class="dig">146</span>,<span class="dig">3</span>))
+    <span class="skw">click</span>(Pattern(<img src="1480913581177.png" />).targetOffset(<span class="dig">166</span>,<span class="dig">47</span>))
+    <span class="skw">click</span>(Pattern(<img src="1480913639789.png" />).targetOffset(-<span class="dig">3</span>,-<span class="dig">13</span>))
+    <span class="skw">wait</span>(<img src="1480918359212.png" />,<span class="dig">5</span>)
+    <span class="kw">return</span> True
+
+<span class="kw">def</span> adminLogin(id, password):
+    <span class="skw">click</span>(<img src="1480923709757.png" />)
+    <span class="skw">wait</span>(<img src="1480923765056.png" />, <span class="dig">5</span>)
+    <span class="skw">type</span>(id)
+    <span class="skw">type</span>(Key.TAB)
+    <span class="skw">type</span>(password)
+    <span class="skw">type</span>(Key.ENTER)
+    time.<span class="skw">sleep</span>(<span class="dig">1</span>)
+
+
+
+
+
+id = <span class="str">"admin"</span>
+password = <span class="str">"admin123"</span>
+newpass = <span class="str">"admin321"</span>
+filename = <span class="str">"ASDF"</span>
+init()
+<span class="kw">if</span> exists(<img src="1480911392747.png" />) != None:
+    <span class="skw">click</span>(Pattern(<img src="1480911437098.png" />).targetOffset(<span class="dig">7</span>,-<span class="dig">1</span>))
+time.<span class="skw">sleep</span>(<span class="dig">1</span>)
+
+<span class="cmt"># File Download/Upload Checking</span>
+fileCheck(id, password, filename)
+
+<span class="cmt"># Installer Download Checking</span>
+<span class="kw">for</span> i <span class="kw">in</span> range(<span class="dig">3</span>):
+    <span class="kw">if</span> installerCheck() == True:
+        <span class="kw">print</span>(str(i+<span class="dig">1</span>) + <span class="str">" Done!"</span>)
+    <span class="kw">else</span>:
+        <span class="kw">print</span>(str(i+<span class="dig">1</span>) + <span class="str">" Error!"</span>)
+
+<span class="cmt"># System Password vs Moderator Password Checking</span>
+systemPassword(id, password, newpass, bypass=False)
+systemPassword(id, newpass, password, bypass=False)
+systemPassword(id, password, newpass, bypass=False)
+systemPassword(id, newpass, password, bypass=False)
+</pre>
+</body>
+</html>
