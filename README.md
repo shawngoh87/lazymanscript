@@ -1,2 +1,2 @@
 # lazymanscript
-Scripts for lazy MFs
+Woops
